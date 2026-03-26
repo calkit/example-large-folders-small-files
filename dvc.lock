@@ -1,0 +1,210 @@
+schema: '2.0'
+stages:
+  make-data:
+    cmd: ' python make-data.py'
+    deps:
+    - path: make-data.py
+      hash: md5
+      md5: dcb55e35beff0bb369e2adbc18ac91a6
+      size: 1538
+    outs:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+  compress-data:
+    cmd: ' mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*'
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 24ff5df7107bd1b770264077b0269023
+      size: 474993453
+  _compress-data:
+    cmd: ' mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*'
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 24ff5df7107bd1b770264077b0269023
+      size: 474993453
+  calkit:compress-data:
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  ck:compress-data:
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.compress-data:
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.compress:input:
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.compress(input):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/input.zip input/*
+    deps:
+    - path: input
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/input.zip
+      hash: md5
+      md5: 205a44cd4e9af6c7354ebc69b5fd3607
+      size: 474969453
+  calkit.compress(results):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.compress(make-data):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit compress results:
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.zip(results):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.zip(input):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/input.zip input/*
+    deps:
+    - path: input
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/input.zip
+      hash: md5
+      md5: 205a44cd4e9af6c7354ebc69b5fd3607
+      size: 474969453
+  calkit.dvc.compress(results):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+    - path: results
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/results.zip
+      hash: md5
+      md5: 0af245192af5e6d8df728b35047579a8
+      size: 474993453
+  calkit.dvc.compress(input):
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/input.zip input/*
+    deps:
+    - path: input
+      hash: md5
+      md5: 480c34391024d047d28cf586f23740a6.dir
+      size: 629145600
+      nfiles: 6000
+    outs:
+    - path: .calkit/dvc/zip/input.zip
+      hash: md5
+      md5: 205a44cd4e9af6c7354ebc69b5fd3607
+      size: 474969453
+  calkit.dvc.uncompress(input):
+    cmd: unzip .calkit/dvc/zip/input.zip -d input
+    deps:
+    - path: .calkit/dvc/zip/input.zip
+      hash: md5
+      md5: 205a44cd4e9af6c7354ebc69b5fd3607
+      size: 474969453
+    outs:
+    - path: input
+      hash: md5
+      md5: cd7a8e78a3ab91d43ca6f1e40658dbd2.dir
+      size: 629145600
+      nfiles: 6000

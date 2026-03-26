@@ -1,0 +1,9 @@
+pipeline:
+  stages:
+    make-data:
+      kind: python-script
+      environment: _system
+      script_path: make-data.py
+      outputs:
+        - path: results
+          storage: null # dvc-zip

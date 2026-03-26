@@ -1,0 +1,27 @@
+stages:
+  make-data:
+    cmd: ' python make-data.py'
+    deps:
+      - make-data.py
+    outs:
+      - results:
+          cache: false
+          persist: false
+    desc: Automatically generated from the 'make-data' stage in calkit.yaml.
+      Changes made here will be overwritten.
+  "calkit.dvc.compress(results)":
+    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+    deps:
+      - results
+    outs:
+      - .calkit/dvc/zip/results.zip:
+          cache: true
+          persist: false
+  "calkit.dvc.uncompress(input)":
+    cmd: unzip .calkit/dvc/zip/input.zip -d input
+    deps:
+      - .calkit/dvc/zip/input.zip
+    outs:
+      - input:
+          cache: false
+          persist: false
