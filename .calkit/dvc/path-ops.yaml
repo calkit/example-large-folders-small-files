@@ -1,6 +1,0 @@
-# This file describes any DVC path operations we need to perform as part of
-# the pipeline
-# For example, if we need to unzip an archive tracked by DVC, this gets
-# tracked here and added to the DVC pipeline automatically
-input:
-  kind: zip

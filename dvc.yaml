@@ -1,6 +1,6 @@
 stages:
   make-data:
-    cmd: ' python make-data.py'
+    cmd: python make-data.py
     deps:
       - make-data.py
     outs:
@@ -9,19 +9,23 @@ stages:
           persist: false
     desc: Automatically generated from the 'make-data' stage in calkit.yaml.
       Changes made here will be overwritten.
-  "calkit.dvc.compress(results)":
-    cmd: mkdir -p .calkit/dvc/zip && zip .calkit/dvc/zip/results.zip results/*
+  process-input:
+    cmd: bash --noprofile --norc -c "ls input > input-contents.txt"
+    deps:
+      - input
+    outs:
+      - input-contents.txt:
+          cache: false
+          persist: false
+    desc: Automatically generated from the 'process-input' stage in calkit.yaml.
+      Changes made here will be overwritten.
+  process-results:
+    cmd: bash --noprofile --norc -c "ls results > results-content.txt"
     deps:
       - results
     outs:
-      - .calkit/dvc/zip/results.zip:
-          cache: true
-          persist: false
-  "calkit.dvc.uncompress(input)":
-    cmd: unzip .calkit/dvc/zip/input.zip -d input
-    deps:
-      - .calkit/dvc/zip/input.zip
-    outs:
-      - input:
+      - results-content.txt:
           cache: false
           persist: false
+    desc: Automatically generated from the 'process-results' stage in calkit.yaml.
+      Changes made here will be overwritten.

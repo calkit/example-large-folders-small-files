@@ -6,4 +6,22 @@ pipeline:
       script_path: make-data.py
       outputs:
         - path: results
-          storage: null # dvc-zip
+          storage: dvc-zip # dvc-zip or dvc-packed or dvc-folder or dvc-dir
+    process-input:
+      kind: shell-command
+      environment: _system
+      command: ls input > input-contents.txt
+      inputs:
+        - input
+      outputs:
+        - path: input-contents.txt
+          storage: git
+    process-results:
+      kind: shell-command
+      environment: _system
+      command: ls results > results-content.txt
+      inputs:
+        - results
+      outputs:
+        - path: results-content.txt
+          storage: git

@@ -1,0 +1,5 @@
+outs:
+- md5: b142d267d626f8c6380208bb6b800915
+  size: 629757503
+  hash: md5
+  path: input.zip

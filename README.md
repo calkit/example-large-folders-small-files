@@ -40,14 +40,15 @@ to be thought about.
 
 When should zips happen?
 
-- When a folder is added to the repo
-- When a pipeline stage runs that has a zipped output
+- When a folder is added to the repo (`calkit add my-large-folder-small-files`)
+- When a pipeline stage runs that has a `dvc-zip` output
 
-When should unzips happen?
+When should unpacks happen?
 
 - When a project is cloned
 - When the pipeline is run, and the unzipped folder has been modified
-- When a zipped folder is updated by a pull
+- When a packed folder is updated by a pull
+- When we check out a different branch (this should do a dvc pull anyway)
 
 ## Alternate approach
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Create some data."""
 from pathlib import Path
 import random
 import shutil
@@ -8,6 +9,7 @@ NUM_FILES = 6000
 TOTAL_MB = 600
 TOTAL_BYTES = TOTAL_MB * 1024 * 1024  # 600 MiB
 OUTPUT_DIR = Path("results")
+RANDOM_SEED_OFFSET = 2
 
 
 def random_block(rng: random.Random, size: int) -> bytes:
@@ -31,7 +33,7 @@ def main() -> None:
         file_path = OUTPUT_DIR / f"file_{i + 1:04d}.txt"
 
         # Seed per file index for deterministic but distinct content
-        rng = random.Random(i + 1)
+        rng = random.Random(i + 1 + RANDOM_SEED_OFFSET)
 
         # Write in chunks to avoid building large strings in memory
         chunk_size = 8192
