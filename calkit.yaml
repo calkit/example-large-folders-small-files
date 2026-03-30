@@ -6,7 +6,7 @@ pipeline:
       script_path: make-data.py
       outputs:
         - path: results
-          storage: dvc-zip # dvc-zip or dvc-packed or dvc-folder or dvc-dir
+          storage: dvc-zip
     process-input:
       kind: shell-command
       environment: _system

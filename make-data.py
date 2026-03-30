@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Create some data."""
+
 from pathlib import Path
 import random
 import shutil
@@ -9,7 +10,7 @@ NUM_FILES = 6000
 TOTAL_MB = 600
 TOTAL_BYTES = TOTAL_MB * 1024 * 1024  # 600 MiB
 OUTPUT_DIR = Path("results")
-RANDOM_SEED_OFFSET = 2
+RANDOM_SEED_OFFSET = 3
 
 
 def random_block(rng: random.Random, size: int) -> bytes:

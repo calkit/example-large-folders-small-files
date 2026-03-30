@@ -5,12 +5,12 @@ stages:
     deps:
     - path: make-data.py
       hash: md5
-      md5: ebb0a209b0d6645b05506454cfd7dafa
-      size: 1606
+      md5: 1c8d1e7ebe6358393825b929495c98e9
+      size: 1607
     outs:
     - path: results
       hash: md5
-      md5: 9ff183f7145c8251a5eddfe9523e23bb.dir
+      md5: 11691b0a0a5bfa9bb1d68f759a8d955d.dir
       size: 629145600
       nfiles: 6000
   compress-data:
@@ -278,8 +278,8 @@ stages:
     deps:
     - path: input
       hash: md5
-      md5: c0c6c436ee9f8a2f818a8777286d229c.dir
-      size: 629145481
+      md5: 07a6ea25cea810532b26fa6a031945cf.dir
+      size: 629145383
       nfiles: 6000
     outs:
     - path: input-contents.txt
@@ -291,7 +291,7 @@ stages:
     deps:
     - path: results
       hash: md5
-      md5: 9ff183f7145c8251a5eddfe9523e23bb.dir
+      md5: 11691b0a0a5bfa9bb1d68f759a8d955d.dir
       size: 629145600
       nfiles: 6000
     outs:
