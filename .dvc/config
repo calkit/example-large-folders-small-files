@@ -1,5 +1,5 @@
 [core]
     autostage = true
     remote = calkit
-[remote "calkit"]
+['remote "calkit"']
     url = ck://calkit/example-large-folders-small-files

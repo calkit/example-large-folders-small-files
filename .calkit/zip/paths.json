@@ -1,4 +1,5 @@
 {
   "results": ".calkit/zip/files/results.zip",
-  "input": ".calkit/zip/files/input.zip"
+  "input": ".calkit/zip/files/input.zip",
+  "input-2": ".calkit/zip/files/input-2.zip"
 }
