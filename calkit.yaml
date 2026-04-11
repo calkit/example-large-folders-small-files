@@ -28,3 +28,7 @@ pipeline:
 questions:
   - How can we make DVC more efficient for large folders containing many
     small files?
+datasets:
+  - path: input
+    title: Input data
+    description: This is the input dataset we acquired from elsewhere.
