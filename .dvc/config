@@ -3,3 +3,5 @@
     remote = calkit
 ['remote "calkit"']
     url = ck://calkit/example-large-folders-small-files
+['remote "hf"']
+    url = hf://buckets/petebachant/test-bucket
