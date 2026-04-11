@@ -25,3 +25,6 @@ pipeline:
       outputs:
         - path: results-content.txt
           storage: git
+questions:
+  - How can we make DVC more efficient for large folders containing many
+    small files?
